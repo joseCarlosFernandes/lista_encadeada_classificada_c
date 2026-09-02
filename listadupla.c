@@ -23,7 +23,7 @@ void enterdata(){
     scanf("%d", &corrente->codigo);
 }
 
-/*void insert(){
+/*void inserir(){ -> Inserir que não classifica os registros, só adiciona os mesmo ao final da lista
     if(inicio == NULL){
         corrente = (no*)malloc(sizeof(no));
         auxiliar = corrente;
