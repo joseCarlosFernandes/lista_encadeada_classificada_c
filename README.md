@@ -5,5 +5,5 @@ Um CRUD basico para estudo de manipulação de ponteiros em C.
 Esse projeto foi desenvolvido durante as aulas de Estrutura de Dados. Ele agrupa a estrutura das listas duplamente encadeadas com o algorítimo para classificar alfabeticamente os registros na hora da inserção.
 
 # Pontos a serem melhorados
-  -> Adicionar automaticamente IDs aos registros
+  -> Adicionar automaticamente IDs aos registros \n
   -> Salvar registros em um arquivo
