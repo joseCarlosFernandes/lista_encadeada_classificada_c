@@ -15,15 +15,17 @@ struct no *auxiliar2 = NULL;
 struct no *corrente = NULL;
 struct no *fim = NULL;
 
+int cod = 1; //codigo dos usuarios
+
 
 void enterdata(){
     printf("Insira o Nome: \n");
     scanf("%s", &corrente->nome);
-    printf("\n Insira o codigo: \n");
-    scanf("%d", &corrente->codigo);
+    corrente->codigo = cod;
+    cod++; //aumenta 1 a cada chamada da função
 }
 
-/*void inserir(){ -> Inserir que não classifica os registros, só adiciona os mesmo ao final da lista
+/*void insert(){ //inserir sem classificação
     if(inicio == NULL){
         corrente = (no*)malloc(sizeof(no));
         auxiliar = corrente;
@@ -58,6 +60,7 @@ void inserir(){
 
     // Lista vazia
     if(inicio == NULL){
+        auxiliar = corrente;
         inicio = corrente;
         fim = corrente;
 
@@ -103,7 +106,7 @@ void inserir(){
     }
 
     // Inserir no final
-    if(achou == 0){
+    if(achou == 0){ //se continua 0 é pq nenhuma das condiçoes acima foi atendida, logo, o elemento não pertence nem ao começo nem ao meio da lista
         auxiliar->next = corrente;
         corrente->back = auxiliar;
         corrente->next = NULL;
@@ -238,14 +241,13 @@ void buscar(){
             scanf("%d", &codBusca);
             while(auxiliar->codigo != codBusca){
                 auxiliar = auxiliar->next;
-                corrente = auxiliar;
             }
             if(auxiliar == NULL){
                 printf("Não encontrado!");
             }else{
                 printf("Registros Encontrados: \n");
-                printf("Codigo: %d \n", corrente->codigo);
-                printf("Nome: %s \n", corrente->nome);
+                printf("Codigo: %d \n", auxiliar->codigo);
+                printf("Nome: %s \n", auxiliar->nome);
                 printf("-----------------------\n");
             }
         }else if(opBusca == 2){
